@@ -1,0 +1,173 @@
+/* CSS internal style 
+        element dalam css:
+        1. selector: 
+            class => .class
+            element => div
+            id => #id_name
+        2. property:
+            background
+            font
+            width
+            color 
+        3. value:
+            : red
+        setiap definisi diakhiri dengan ;
+
+        id => identify unique && class => bisa sharing
+
+        hierarchy css:
+        - id 
+        - class
+    */
+
+/*#container_1 {
+      background-color: blue;
+      width: 200px;
+      height: 200px;
+    }*/
+
+* {
+  color: rgb(42, 42, 42);
+}
+
+#container_2 {
+  /*background: #123;*/
+  /*background: rgb(40, 32, 179);*/
+  background: rgba(5, 5, 11, 0.609);
+  width: 100px;
+  height: 100px;
+  color: aqua;
+}
+
+.blue_container {
+  background: rgba(16, 16, 29, 0.609);
+  width: 200px;
+  height: 200px;
+  color: white;
+}
+
+body {
+  background: rgba(203, 203, 203, 0.309);
+}
+
+p {
+  color: rgb(243, 243, 243);
+  font-size: large;
+}
+
+.grey_container {
+  font-size: large;
+
+  border-width: 2px;
+  border-style: dotted;
+  border-color: black;
+  border-left-color: brown;
+  padding: 1px;
+  /*
+        padding -> jarak yang ada antara
+        border dan content
+        */
+
+  margin-top: 100px;
+  /*
+        margin -> jarak yang ada antara
+        border dan element tetangga
+        */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: justify;
+  text-decoration: dashed;
+  text-overflow: clip;
+  text-justify: auto;
+}
+
+/* span::after {
+  content: "Degree";
+} */
+
+#my_container:first-chil div {
+  background-color: aqua;
+  width: 100px;
+  height: 100px;
+}
+
+.active_hover:hover {
+  background-color: blue;
+}
+
+
+/* containers */
+.container_1{
+    background: rgb(96, 96, 96);
+    position: absolute;
+    left: 50px;
+    padding: 10px;
+    z-index: 1;
+    /* display: none; */
+    /* visibility: hidden; */
+}
+
+.container_2{
+    background: rgb(161, 161, 161);
+    position: relative;
+    top: 60px;
+    left: 50px;
+    padding: 10px;
+}
+
+.container_3{
+    background: rgb(161, 161, 161);
+    position: static;
+    top: 500px;
+    left: 50px;
+    width: 1000px;
+    padding: 10px;
+}
+
+.container_4{
+    background: rgb(161, 161, 161);
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    /* z-index: ; */
+}
+
+#span_id_1{
+    width: 10px;
+    display:flex;
+}
+
+ul.list_1{
+    list-style:armenian;
+}
+
+ul.list_2{
+    list-style:decimal;
+}
+
+/* pseudo class (:) / pseudo element (::) */
+/* https://www.w3schools.com/css/css_pseudo_classes.asp */
+.container_1:hover{
+    background-color: blue;
+    width: 10px;
+}
+
+a.a_1:hover{
+    color: red;
+}
+
+a.a_1:link{
+    color: blue;
+}
+
+a.a_1:visited{
+    color: chartreuse;
+}
+
+span::after{
+    content: " Derajat Celcius";
+}
+
+span::before{
+    content: "Suhu ";
+}

@@ -1,0 +1,98 @@
+* {
+  color: white;
+}
+
+.main-background {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)),
+    url("../asset/background-main.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.navigation-bar {
+  width: 85%;
+  margin: auto;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#logo-image {
+  width: 150px;
+  cursor: pointer;
+}
+
+.navigation-bar ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 10px;
+  position: relative;
+}
+
+.navigation-bar ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.navigation-bar ul li::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: white;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.7s;
+}
+
+.navigation-bar ul li:hover::after {
+  width: 100%;
+}
+
+.content {
+  /* background-color: rgba(1, 1, 1, 0.5); */
+  position: absolute;
+  width: 75%;
+  top: 50%;
+  left: 15%;
+  height: 200px;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.wrapper {
+  display: grid;
+  place-items: center;
+}
+
+.big-text{
+    font-size: 60px;
+}
+
+.typing-demo {
+  font-size: 30px;
+  width: 41ch;
+  animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 1px solid;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.footer-media {
+  visibility: hidden;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- element to be shown in tab -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Z</title>
+    <link rel="icon" href="" />
+
+    <!-- in file css -->
+    <style>
+      #form_container_1 {
+        margin: auto;
+        width: 50%;
+        height: 100%;
+        position: relative;
+        border: 1px solid grey;
+        padding: 10px;
+      }
+
+      .grey_container {
+        background-color: grey;
+      }
+
+      .white_conatiner {
+        color: white;
+      }
+    </style>
+  </head>
+  <!-- body to be shown in page -->
+  <body onload="clock()">
+    <div
+      id="form_container_1"
+      onmouseenter="changeActiveColor()"
+      onmouseleave="changeInactiveColor()"
+    >
+      <!-- clock -->
+      <p id="clock_id">hello</p>
+
+      <!-- for container feedback -->
+      <form>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="in_name_1" /> <br />
+        <label for="email">Email</label>
+        <input type="email" name="email" id="in_email_1" /> <br />
+        <label for="feedback">Feedback</label>
+        <input type="text" name="feedback" id="in_feedback_1" /> <br />
+        <input type="submit" value="Submit" />
+      </form>
+      <button type="button">Click Me!</button>
+    </div>
+    <!-- displaying list -->
+    <div
+      id="list_container_1"
+      style="width: 100px; height: 100px; background: grey"
+      onmouseenter="hideToggleList()"
+      onmouseleave="hideToggleList()"
+    >
+      <div id="list_container_2" hidden>
+        <li>Sumatera</li>
+        <li>Jawa</li>
+        <li>Bali</li>
+      </div>
+    </div>
+
+    <div>
+      <script>
+        for (i = 0; i < 10; i++) {
+          document.writeln(i, "<br/>");
+        }
+      </script>
+    </div>
+
+    <pre>
+      hello world
+      from pre element
+    </pre>
+  </body>
+
+  <script>
+    function changeActiveColor() {
+      document
+        .getElementById("form_container_1")
+        .setAttribute("class", "grey_container");
+    }
+
+    function changeInactiveColor() {
+      document
+        .getElementById("form_container_1")
+        .setAttribute("class", "white_container");
+    }
+
+    function clock() {
+      const d = new Date();
+      let text = d.toString();
+      document.getElementById("clock_id").innerHTML = text;
+      setTimeout(clock, 1000);
+    }
+
+    let isHide = false;
+    function hideToggleList() {
+      let docList = document.getElementById("list_container_2");
+      if (isHide) {
+        docList.setAttribute("hidden", "");
+      } else {
+        docList.removeAttribute("hidden");
+      }
+      isHide = !isHide;
+    }
+  </script>
+</html>

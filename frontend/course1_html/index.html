@@ -1,0 +1,163 @@
+<!-- DOCTYPE memberikan informasi ke browser bahwa file yang diterima adalah HTML -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My First Page</title>
+  </head>
+  <body>
+    <div id="head_navbar_1" style="background: yellow" class="navbar">div1</div>
+    <div id="head_navbar_2" class="navbar">div2</div>
+
+    <a href="./login.html">ClickMe!</a>
+    <hr />
+    <button onclick="">CLICK ME</button>
+    <!-- 
+        Element: head, meta, title, body
+        element -> ada pembuka dan penutup
+        <> </>
+
+        div -> container kosong
+
+        Attribute: style, id, class
+
+        html -> kerangka
+        modern web -> react.js next.js vue.js
+     -->
+    <h1>H1</h1>
+    <h2>H2</h2>
+    <h3>H3</h3>
+    <h4>H4</h4>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />
+      Porro, blanditiis minima magni eligendi a unde perferendis deleniti
+      perspiciatis totam excepturi. <br />
+      Earum deserunt ab quos sit facere veritatis debitis corporis expedita.
+    </p>
+
+    <!-- inline element -->
+    inline text <span>hello world</span>
+    <i>italic</i>
+    <em>em</em>
+    <b>bold</b>
+    <strong>bold from strong</strong>
+
+    <div>hello world</div>
+    <div>hello world</div>
+    <div>
+      <div>
+        <div>hello world</div>
+      </div>
+    </div>
+
+    <pre>
+        p1
+        p2
+        p3
+    </pre>
+
+    <span>favorite place:</span>
+    <ul>
+      <!-- unorder -->
+      <li>
+        jakarta
+        <ol>
+          <li>monas</li>
+        </ol>
+      </li>
+      <li>surabaya</li>
+    </ul>
+
+    <ol>
+      <!-- order -->
+      <li>jakarta</li>
+      <li>surabaya</li>
+    </ol>
+
+    <dl>
+      <!-- defined list -->
+      <dt>Coffee</dt>
+      <dd>Black hot drink</dd>
+      <dd>Americano</dd>
+      <dt>Milk</dt>
+      <dd>White cold drink</dd>
+    </dl>
+
+    <form>
+      <label for="fname">First name:</label>
+      <input type="text" id="fname" name="fname" /> <br />
+      <label for="lname">Last name:</label>
+      <input type="text" id="lname" name="lname" />
+    </form>
+
+    <!-- image -->
+    <!-- <img
+      src="https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg"
+      alt="calman_logo_image"
+    /> -->
+    <table>
+      <tr>
+        <!-- menambahkan 1 row di table -->
+        <th>Month</th>
+        <th>Saving</th>
+      </tr>
+      <tr>
+        <td>January</td>
+        <td>1000</td>
+      </tr>
+      <tr>
+        <td>February</td>
+        <td>1000</td>
+      </tr>
+    </table>
+
+    <table border="">
+      <tr>
+        <td rowspan="2">No</td>
+        <td colspan="2">Jenis Kelamin</td>
+        <td rowspan="2">Nama</td>
+      </tr>
+      <tr>
+        <td>L</td>
+        <td>P</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>L</td>
+        <td></td>
+        <td>Calman</td>
+      </tr>
+    </table>
+
+    <!-- 
+        membuat 2 html:
+            landing page:
+                logo icon
+                login
+                Welcome to my landing page
+                informasi daren
+            login:
+                form:
+                    username
+                    password
+                    re-type password
+                    Button Submit
+     -->
+    <img
+      src="./background-main.jpg"
+      alt="background"
+      width="100"
+      height="100"
+    />
+
+    <h1 draggable="true">Draggable</h1>
+    <div style="width: 100px; height: 100px; background: red"></div>
+    <p contenteditable="false">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos nisi,
+      laboriosam fuga nulla ipsa delectus. Ratione doloremque natus ducimus
+      maiores error aspernatur praesentium assumenda atque veritatis! Esse
+      officia id ad.
+    </p>
+  </body>
+</html>
