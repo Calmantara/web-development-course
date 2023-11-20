@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom/dist/panzoom.min.js"></script>
+
+    <title>JQuery Web</title>
+
+    <style>
+      .small-img {
+        max-width: 100px;
+        height: 100px;
+      }
+      .large-img {
+        max-width: 400px;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- functionality -->
+    <!-- 1. ketika default, A akan hide -->
+    <!-- 2. ketika question di click, A akan muncul -->
+
+    <div id="container-question-1">
+      <div id="question-1" style="background-color: red; color: white">
+        Accordion Item 1
+      </div>
+
+      <div id="answer-1" hidden="true" style="border: 3px solid red">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem eum,
+        expedita vitae ex veritatis excepturi deserunt placeat velit eius
+        laborum earum consequatur dolorem magnam neque, aut, iste in at
+        sapiente.
+      </div>
+    </div>
+
+    <form action="">
+      <!-- 1. contact harus terdiri dari minimal 5 digit -->
+      <!-- 2. contact harus terdiri maximal 12 digit -->
+      <!-- <input type="number" name="my-contact" id="my-contact" /> -->
+      <textarea name="my-contact" id="my-contact" cols="30" rows="1"></textarea>
+    </form>
+    <div id="my-feedback"></div>
+
+    <!-- interactive menu -->
+    <div id="my-menu-1">
+      <h1>Menu 1</h1>
+
+      <div id="my-menu-detail-1" hidden>
+        <img id="my-menu-img-1" src="" alt="my-image" />
+        <div id="my-menu-description-1">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta
+          ullam, atque eveniet cupiditate tempore ipsam id labore nisi veritatis
+          officiis, facilis doloribus aliquam, quidem itaque impedit. Blanditiis
+          suscipit officia voluptates.
+        </div>
+      </div>
+    </div>
+
+    <!-- small image -->
+    <img id="my-image" src="images.jpeg" alt="my image" class="small-img" />
+
+    <!-- <button type="button" id="my-button"> click me </button> -->
+    <!-- menggunakan javascript DOM -->
+    <script>
+      function changeText() {
+        const myContainer = document.getElementById("my-container");
+        myContainer.innerText = "clicked";
+      }
+
+      $("#my-button").click(function () {
+        alert("hello world");
+      });
+
+      // jquery for question 1
+      $("#question-1").click(function () {
+        $("#answer-1").fadeToggle();
+      });
+
+      $("#my-contact").keypress(function () {
+        const val = $("#my-contact").val();
+        if (val.length >= 5 && val.length < 13) {
+          $("#my-feedback").text("valid");
+        } else {
+          $("#my-feedback").text("invalid");
+        }
+      });
+
+      $("#my-menu-1").hover(function () {
+        $("#my-menu-detail-1").toggle();
+      });
+
+      // little bit dirty code
+      let clicked = false;
+      $("#my-image").click(function () {
+        const myImg = document.getElementById("my-image");
+        const panZoom = Panzoom(myImg);
+        const parent = myImg.parentElement;
+        if (clicked == false) {
+          $("#my-image").removeClass("small-img");
+          $("#my-image").addClass("large-img");
+          parent.addEventListener("wheel", panZoom.zoomWithWheel);
+        } else {
+          $("#my-image").removeClass("large-img");
+          $("#my-image").addClass("small-img");
+          parent.removeEventListener("wheel", panZoom.zoomWithWheel);
+        }
+        clicked = !clicked;
+      });
+    </script>
+  </body>
+</html>
