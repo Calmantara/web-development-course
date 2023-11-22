@@ -1,0 +1,5 @@
+A few more hints since you're using JSFiddle:
+
+Make a habit of saving the fiddle and always provide the link together with your question
+Under "Framework & Extensions" in the left-hand panel, make sure you've set the javascript to load with "no wrap", otherwise you won't be able to call the method from your html the way you've done. (This applies when you're defining your JavaScript functions in the JavaScript panel. I see from your updated question with included fiddle link that you're currently putting it all in the HTML markup, so you won't have this issue)
+Hit F12 in your browser, and you will be able to see the actual error message that your code produces.

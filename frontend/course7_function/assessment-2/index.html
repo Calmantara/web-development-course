@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <main>
+      <!-- upload file -->
+      <input type="file" id="myFile" name="filename" />
+      <div id="text-from-file-uploaded"></div>
+
+      <!-- direct read file -->
+      <hr />
+      <button id="btn-read" type="button">read file</button>
+      <div id="text-from-file"></div>
+    </main>
+
+    <script>
+      // solution 1
+      $("#btn-read").click(function (e) {
+        e.preventDefault();
+        $.get(
+          "file.txt",
+          function (textData, status) {
+            if (status != "success") {
+              return;
+            }
+            // status success reading the files
+            var aLines = textData.split("\n");
+            $.each(aLines, function (n, sLine) {
+              $("#text-from-file").append("<div>" + sLine + "</div>");
+            });
+          },
+          "text"
+        );
+      });
+
+      // solution 2
+      $("#myFile").change(function (e) {
+        e.preventDefault();
+        // reading file uploaded
+        const file = e.target.files[0];
+        // reader
+        const reader = new FileReader();
+        reader.onload = function (fileLoadedEvent) {
+          var textFromFileLoaded = fileLoadedEvent.target.result;
+          //   input in page
+          $("#text-from-file-uploaded").append(
+            "<div>" + textFromFileLoaded + "</div>"
+          );
+        };
+        reader.readAsText(file, "UTF-8");
+      });
+
+      //   WRITE TO FILE !
+    </script>
+  </body>
+</html>
